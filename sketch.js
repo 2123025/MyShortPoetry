@@ -27,7 +27,7 @@ function draw() {
 
 }
 
-function keyPressed() {
+function mousePressed() {
 
   if(ball.vel.mag() > speed)
     ball.vel.mult(deceleration);
