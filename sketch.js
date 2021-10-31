@@ -59,7 +59,7 @@ function Ball() {
   this.explode = function() {
     if(this.isBigEnough == false){
     if(this.size < 1700){
-      this.size += 55;
+      this.size += 75;
 
       if(this.pos.x < 0)
         this.pos.x = 0;
@@ -79,11 +79,8 @@ function Ball() {
 
     if(this.isBigEnough == true){
       this.pos = createVector(width/2, height/2);
-      this.size -= 25;
+      this.size = lerp(this.size, 10, 0.04);
       this.ballColor -= 3;
-
-      if(this.size <= 10)
-        this.size = 10;
     }
 
 
