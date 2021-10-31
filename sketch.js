@@ -39,6 +39,7 @@ function Ball() {
   this.pos = createVector(width/2, height/2);
   this.vel = p5.Vector.random2D().mult(speed);
   this.size = 25;
+  this.radius = this.size / 2;
   this.ballColor = 0;
   this.isBigEnough = false;
 
@@ -59,7 +60,7 @@ function Ball() {
     if(this.isBigEnough == false){
     if(this.size < 1700){
       this.size += 55;
-      
+
       if(this.pos.x < 0)
         this.pos.x = 0;
 
@@ -89,16 +90,16 @@ function Ball() {
   }
 
   this.edges = function() {
-    if (this.pos.y > height - this.size ||
-        this.pos.y < this.size) {
+    if (this.pos.y > height - this.radius ||
+        this.pos.y < this.radius) {
 
       this.vel.y *= -1;
       this.vel.mult(acceleration);
       this.ballColor += 12;
     }
 
-    if (this.pos.x > width - this.size ||
-        this.pos.x < this.size) {
+    if (this.pos.x > width - this.radius ||
+        this.pos.x < this.radius) {
 
       this.vel.x *= -1;
       this.vel.mult(acceleration);
