@@ -95,7 +95,8 @@ function Ball() {
 
       this.vel.y *= -1;
       this.vel.mult(acceleration);
-      this.ballColor += 12;
+      this.size += 3;
+      this.ballColor += 15;
     }
 
     if (this.pos.x > width - this.radius ||
@@ -103,7 +104,8 @@ function Ball() {
 
       this.vel.x *= -1;
       this.vel.mult(acceleration);
-      this.ballColor += 12;
+      this.size += 3;
+      this.ballColor += 15;
     }
   }
 }
